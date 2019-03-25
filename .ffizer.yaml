@@ -1,0 +1,18 @@
+variables:
+  - name: project_name
+    default_value: "{{ file_name ffizer_dst_folder }}"
+  - name: version
+    default_value: "0.1.0"
+  - name: author
+  - name: gitignore_what
+    default_value: rust,git,visualstudiocode
+    ask: Create useful .gitignore (via gitignore.io) for
+
+ignores:
+  - .git/*
+  - .git # exclude .git of the template host
+
+imports:
+  - uri: "git@github.com:ffizer/templates_default.git"
+    rev: "master"
+    subfolder: "gitignore_io"
